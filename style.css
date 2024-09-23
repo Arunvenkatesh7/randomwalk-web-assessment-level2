@@ -1,0 +1,257 @@
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 175px);
+    grid-template-rows: repeat(3, 175px);
+    gap: 10px;
+    margin: 40px auto;
+    width: 550px;
+    height: 550px;
+    
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; 
+    font-size: 36px;
+    cursor: pointer;
+    border: 2px solid #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cell:nth-child(odd) {
+    background-color: #bbdefb; /* Light Blue */
+}
+
+.cell:nth-child(even) {
+    background-color: white; 
+}
+
+.cell:hover {
+    background-color: #1e88e5; 
+    color: white;
+}
+
+#game-status {
+    margin: 20px 0;
+    font-size: 35px;
+    color: #1e88e5;
+    display: inline-block;
+    background-color: #333;
+    height: 40px;
+    width:40px;
+    padding:30px;
+    margin-left: 50px;
+    font-weight: 700;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Initially hidden Game Result Box */
+.result_status {
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #ff5252;
+    margin-top: 10px;
+    top: 30px;
+    right: 20px;
+    position: absolute;
+    width: 170px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: all 0.6s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Show the result_status when it becomes visible */
+.result_status.show {
+    opacity: 1; 
+    visibility: visible;
+}
+
+
+
+
+#reset-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: skyblue;
+    border: 2px solid #1e88e5;
+    border-radius: 30px;
+    color: black;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+    float: right;
+    margin-right: 50px;
+}
+
+#reset-btn:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+/* Alternate Cell Colors After Win */
+.cell.win {
+    background-color: #1e88e5; /* Dark Blue */
+    color: white;
+}
+
+.cell.win:nth-child(odd) {
+    background-color: #64b5f6; /* Alternate to lighter blue */
+}
+
+.cell.win:nth-child(even) {
+    background-color: #bbdefb; /* Lighter Blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #game-board {
+        grid-template-columns: repeat(3, 110px);
+        grid-template-rows: repeat(3, 110px);
+        width: 360px;
+        height: 360px;
+    }
+
+    .cell {
+        font-size: 28px;
+    }
+
+    #game-status, #reset-btn {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+.welcome_board {
+    background-color: #e3f2fd;
+    width: 800px;
+    height: 550px;
+    position: absolute;
+    right: 0;
+    transform: translateX(-50%);
+    top: 80px;
+    border-radius: 50px;
+    color: #1e1e1e;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: top 0.6s ease-out, opacity 0.6s ease-out; /* Smooth transition for top and opacity */
+}
+
+.welcome_board.hidden {
+    top: -600px; 
+    opacity: 0; 
+}
+
+
+.welcome_board .cross_button {
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    right: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 50px 0 0;
+    color: #1e88e5; /* Dark Blue Close Button */
+    font-weight: 600;
+    font-size: 25px;
+    border: none;
+    outline: none;
+}
+
+.welcome_board .cross_button:hover {
+    background-color: red; /* Dark Blue on Hover */
+    color: white;
+    cursor: pointer;
+}
+
+.welcom_container {
+    padding: 20px;
+}
+
+.header {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e88e5;
+}
+
+.subheader {
+    font-size: 27px;
+    margin-top: 20px;
+    color: #1e1e1e;
+    font-weight: 800;
+}
+
+.instructions {
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #1e1e1e; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions li {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.game_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ttt_game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+#enjoy{
+    margin-top: 40px;
+    background-color: #1e88e5;
+    height:70px;
+    width:400px;
+    border-radius:20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+

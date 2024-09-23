@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="welcome_board" id="welcomeBoard">
+        <div class="cross_button" id="closeWelcomeBoard">X</div>
+        <div class="welcom_container">
+            <div class="header">Welcome To Tic Tac Toe</div>
+            <div class="subheader">Instructions</div>
+            <ul class="instructions">
+                <li>1. 'X' will not make a move on 'O' turn, and vice-versa.</li>
+                <li>2. If X or O makes moves in the same row, same column, or diagonal, they win.</li>
+                <li>3. It's possible for neither player to win.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="game_info">
+        <div id="enjoy">Start And Enjoy</div>
+    </div>
+
+<div class="ttt_game">
+        <div class="turn_box">
+            <h1> Turn Indicator </h1>
+            <p id="game-status"></p>
+        </div>
+       
+        <div id="result-status" class="result_status">Playing ...</div>
+
+    <div id="game-board">
+        <div class="cell" id="cell-0"></div>
+        <div class="cell" id="cell-1"></div>
+        <div class="cell" id="cell-2"></div>
+        <div class="cell" id="cell-3"></div>
+        <div class="cell" id="cell-4"></div>
+        <div class="cell" id="cell-5"></div>
+        <div class="cell" id="cell-6"></div>
+        <div class="cell" id="cell-7"></div>
+        <div class="cell" id="cell-8"></div>
+    </div>
+    
+    <button id="reset-btn">Reset Game</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
