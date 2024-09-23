@@ -1,3 +1,7 @@
+let xScore = 0;
+let oScore = 0;
+
+
 
 document.getElementById('closeWelcomeBoard').addEventListener('click', function() {
     document.getElementById('welcomeBoard').style.display = 'none';
@@ -48,8 +52,15 @@ function checkResult() {
     }
 
     if (roundWon) {
+        if(currentPlayer == 'X'){
+            xScore++;
+        }
+        else{
+            oScore++;
+        }
         resultDisplay.innerHTML = `${currentPlayer} wins!`; // Show win result
         resultDisplay.classList.add('show');
+        updateScores();
         gameActive = false;
         return;
     }
@@ -105,7 +116,14 @@ function initializeGameBoard() {
 }
 
 
+// Function to update the displayed scores
+function updateScores() {
+    document.querySelector('#x-score').innerHTML = `X: ${xScore}`;
+    document.querySelector('#o-score').innerHTML = `O: ${oScore}`;
+}
 
+// Call this function at the start to initialize scores on the front page
+updateScores();
 
 
 
